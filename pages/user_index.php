@@ -107,7 +107,12 @@
                             <p>Add Post</p>
                         </a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pschat/status.php">
+                            <i class=""></i>
+                            <p>Viw Product</p>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a href="logout.php" class="nav-link" href="" onclick="scrollToDownload()">
                             <i class="now-ui-icons ui-1_lock-circle-open"></i>

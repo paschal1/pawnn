@@ -99,7 +99,7 @@
                         </div>
                         <div class="pull-left">
                             <h6>
-                                <a href="../pages/user_index.php" class="link">Admin</a>
+                                <a href="../pages/admin_signup.php" class="link">Admin</a>
                             </h6>
                         </div>
                         <div class="pull-right">
