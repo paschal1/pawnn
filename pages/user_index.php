@@ -110,7 +110,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="../pschat/status.php">
                             <i class=""></i>
-                            <p>Viw Product</p>
+                            <p>View Product</p>
                         </a>
                     </li>
                     <li class="nav-item">

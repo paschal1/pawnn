@@ -46,21 +46,21 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom"
-                            href="https://twitter.com/CreativeTim" target="_blank">
+                            href="https://twitter.com/Epspawn" target="_blank">
                             <i class="fa fa-twitter"></i>
                             <p class="d-lg-none d-xl-none">Twitter</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom"
-                            href="https://www.facebook.com/CreativeTim" target="_blank">
+                            href="https://www.facebook.com/Epspawn" target="_blank">
                             <i class="fa fa-facebook-square"></i>
                             <p class="d-lg-none d-xl-none">Facebook</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom"
-                            href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
+                            href="https://www.instagram.com/Epspawn" target="_blank">
                             <i class="fa fa-instagram"></i>
                             <p class="d-lg-none d-xl-none">Instagram</p>
                         </a>
@@ -99,7 +99,7 @@
                         </div>
                         <div class="pull-left">
                             <h6>
-                                <a href="../pages/admin_signup.php" class="link">Admin</a>
+                                <a href="../admin/admin_signup.php" class="link">Admin</a>
                             </h6>
                         </div>
                         <div class="pull-right">
