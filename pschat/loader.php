@@ -10,7 +10,7 @@ if (!isset($_SESSION['id']) || (trim($_SESSION['id']) == '')) {
 include('database_connect.php');
 //include functions here.. 
 include('functions.php');
-//error_reporting(1);
+error_reporting(1);
 
 // background page comes in
 include("index_background.php");
