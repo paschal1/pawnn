@@ -1,7 +1,13 @@
 <?php
+$dbconn = mysqli_connect("localhost","epsphzof_starite","paschal@081","epsphzof_pawn");
 
-//database_connection
-$dbconn = new PDO("mysql:host=localhost;  dbname=folder; charset=utf8mb4;","root","");
+// Check connection
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+
+  date_default_timezone_set("Africa/lagos"); 
 
 
 
