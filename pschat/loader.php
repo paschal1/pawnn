@@ -45,17 +45,19 @@ include("index_background.php");
     <!-- form for posting goes here -->
 
     <!-- i want the page note to reload when submit button is clicked -->
+
     <form method="post" action="upload.php" enctype="multipart/form-data" name="post_pic" id="formdata">
         <div class="container">
             <label for="" class="form-group ">
-                <textarea class="form-control" name="post_txt" placeholder="Add Product Description"
-                    id="post_txt"></textarea>
+                <textarea class="form-control" name="post_txt"
+                    placeholder="<?php echo 'Tell us what about what you want to sell';?>"
+                    id="post_txt">What's your thought</textarea>
             </label><br> <br>
             <label for="" class="form-group ">
-                <input type="text" name="price" class="form-control" placeholder="Enter Price" id="p">
+                Enter Price<input type="text" name="price" class="form-control" placeholder="Enter Price" id="p">
             </label>
             <label for="" class="form-group ">
-                <input type="text" name="qty" class="form-control" placeholder="Enter Qty" id="q">
+                Enter Qty<input type="text" name="qty" class="form-control" placeholder="Enter Qty" id="q">
             </label><br> <br>
             <label for="" class="form-group ">
                 <input type="hidden" name="post_time">
@@ -80,6 +82,7 @@ include("index_background.php");
             </label>
         </div>
     </form>
+
     <div class="wrapper">
         <?php
 
@@ -133,7 +136,7 @@ include("index_background.php");
 
 
 ?>
-        <div class="wrapper">
+        <div class=" wrapper">
             <div style="padding-top:4px; padding-bottom:7px;">
                 <?php if ($user_pic != "") : ?>
                 <span><img src="../uploads/profile/<?php echo $user_pic; ?> " height="40px" width="40px"

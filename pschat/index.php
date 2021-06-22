@@ -48,10 +48,9 @@ include('functions.php');
         </div>
         <div class="col-md-6 p-4 ps-md-0">
             <h5 class="mt-0">Pawn link</h5>
-            <p>Another instance of placeholder content for this other custom component. It is intended to mimic what
-                some real-world content would look like, and we're using it here to give the component a bit of body and
-                size.</p>
-            <a href="loader.php" class="stretched-link">Go somewhere</a>
+            <p>Giving you the best delivering at your door post, assured security tested and trusted</p>
+            <a href="loader.php" class="stretched">Add Post</a>
+
         </div>
     </div>
 

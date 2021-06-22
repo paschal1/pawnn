@@ -114,19 +114,19 @@ function closeNav() {
     </div>
 
     <div class="searchbar">
-        <form method="POST" action="post_index_search.php">
-            <input type="text" name="" placeholder="Search" class="form control search-query" name="search"
-                onkeydown="searchq()" />
+        <input type="text" name="" placeholder="Search" />
+        <!-- <input type="text" name="" placeholder="Search" class="form control search-query" name="search"
+            onkeydown="searchq()" /> -->
 
 
-            <a href="#" class="countryList" id="countryList" style="position:absolute;"><svg xmlns="
+        <a href="#" class="countryList" id="countryList" style="position:absolute;"><svg xmlns="
                 http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-search"
-                    viewBox="0 0 16 16" t>
-                    <path
-                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                </svg>
-            </a>
-        </form>
+                viewBox="0 0 16 16" t>
+                <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg>
+        </a>
+
         <div id="main" style="position:fixed;top:0;">
             <button class="openbtn" onclick="openNav()">☰</button>
         </div>
