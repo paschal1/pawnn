@@ -292,14 +292,7 @@ include("index_background.php");
                                             $user_pic1 = $fetch_user_pic[0];
 
                                             $ids = $_SESSION['id'];
-                                            $query = "SELECT  *FROM user_profile_pic  WHERE user_id='$ids' ORDER BY timeCreated DESC";
-                                            $statement = $dbconn->prepare($query);
-                                            $statement->execute();
-                                            $result6 = $statement->fetchAll();
-                                            foreach ($result6 as $fetch_user_pic) {
-
-                                                $user_pic2 = $fetch_user_pic[2];
-                                                $user_pic1 = $fetch_user_pic[0];
+                                           
                                 ?>
 
 
@@ -329,10 +322,11 @@ include("index_background.php");
                                     <p><?php echo $post_data[4] . ' Item in Stock'; ?></p>
                                     <hr>
                                     <span>&#8358;<?php echo $post_data[3]; ?></span>
-                                    <?php
+                                </div>
+                                <?php
 
                                                     ?>
-                                    <?php
+                                <?php
 
 
                                                     //  $to_user_id= $chat['to_user_id'];
@@ -342,67 +336,66 @@ include("index_background.php");
                                                     ?>
 
 
-                                    <form method="post">
-                                        <span> <a href="user_post_details.php?post_id=<?php echo $post_id; ?>"><button
-                                                    type="button" class="btn btn-warning btn-xs edit"
-                                                    id="<?php echo $post_data[1]; ?>">Order</button></a>
-                                    </form>
-                                    <!-- this is one of the form causing the issue with this form send message to user who
+                                <form method="post">
+                                    <span> <a href="user_post_details.php?post_id=<?php echo $post_id; ?>"><button
+                                                type="button" class="btn btn-warning btn-xs edit"
+                                                id="<?php echo $post_data[1]; ?>">Order</button></a>
+                                </form>
+                                <!-- this is one of the form causing the issue with this form send message to user who
                                     post i want the page note to reload when submit button is clicked -->
-                                    <form method="post" action="" data-sendmessage-form-id="<?php echo $loop_key; ?>">
-                                        <input type="hidden" name="to_user_id" display="none"
-                                            value="<?php echo $user_id;?>">
+                                <form method="post" action="" data-sendmessage-form-id="<?php echo $loop_key; ?>">
+                                    <input type="hidden" name="to_user_id" display="none"
+                                        value="<?php echo $user_id;?>">
 
-                                        <input type="hidden" name="from_user_id" display="none"
-                                            value="<?php echo $from_user_id;?>">
-                                        <input type="hidden" name="chat_message" display="none"
-                                            value="Is this Available">
-                                        <button type="submit" name="send_message"
-                                            class="btn btn-success btn-round pull-right submit" data-toggle="modal"
-                                            data-target="#myModal">
-                                            <i class="now-ui-icons shopping_cart-simple"></i>Send Message</button>
-                                    </form>
+                                    <input type="hidden" name="from_user_id" display="none"
+                                        value="<?php echo $from_user_id;?>">
+                                    <input type="hidden" name="chat_message" display="none" value="Is this Available">
+                                    <button type="submit" name="send_message"
+                                        class="btn btn-success btn-round pull-right submit" data-toggle="modal"
+                                        data-target="#myModal">
+                                        <i class="now-ui-icons shopping_cart-simple"></i>Send Message</button>
+                                </form>
 
-                                    <!-- here you should either choose to submit call a modal here or submit this form
+                                <!-- here you should either choose to submit call a modal here or submit this form
                                              or do both programmatically from a function -->
-                                    <!-- i set it to calling the modal -->
+                                <!-- i set it to calling the modal -->
 
-                                    </span>
+                                </span>
 
-                                    <?php
+                                <?php
 
                                                     //comment box goes here
                                                     //require("comment1.php");
                                                     ?>
-                                    <button type="button" placeholder="" style="border:none; background-color:white; "
-                                        id="comment2" width=15%>
-                                        <?php if ($user_pic != "") : ?>
-                                        <img src="../uploads/profile/<?php echo $user_pic2; ?> " height="20px"
-                                            width="20px" border-radius="50px" />
-                                        <?php else : ?>
-                                        <img src="img/user.jpeg" style=" height:20; width:20; border-radius:50px;" />
-                                        <?php endif; ?>
-                                        <?php } ?>
-                                        Drop your comment...</button>
-                                    <!-- // here goes the comment for
+                                <button type="button" placeholder="" style="border:none; background-color:white; "
+                                    id="comment2" width=15%>
+                                    <?php if ($user_pic != "") : ?>
+                                    <img src="../uploads/profile/<?php echo $user_pic2; ?> " height="20px" width="20px"
+                                        border-radius="50px" />
+                                    <?php else : ?>
+                                    <img src="img/user.jpeg" style=" height:20; width:20; border-radius:50px;" />
+                                    <?php endif; ?>
+                                    <?php } ?>
+                                    Drop your comment...</button>
+                                <!-- // here goes the comment for
                                     m -->
-                                    <!-- this is one of the form causing the issue with this form send comment to user who
+                                <!-- this is one of the form causing the issue with this form send comment to user who
                                     post i want the page note to reload when submit button is clicked -->
-                                    <form method="post" action="" class="form-group"
-                                        data-comment-form-id="<?php echo $loop_key; ?>">
-                                        <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-                                        <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
-                                        <div class="form-group">
-                                            <textarea class="form-input" type="text" style="border:none;"
-                                                placeholder="comment here..." name="comment_txt" id="comment" row="2"
-                                                col="3" value=""></textarea>
-                                            <input type="submit" class="btn default submit" value="Send" title="submit"
-                                                name="subcomment" src="img/sendtext.PNG" alt="Send" width=30px
-                                                height=22px />
-                                            <i class="bi bi-cursor"></i>
-                                    </form>
-                                </div>
-                                <?php
+                                <form method="post" action="" class="form-group"
+                                    data-comment-form-id="<?php echo $loop_key; ?>">
+                                    <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+                                    <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
+                                    <div class="form-group">
+                                        <textarea class="form-input" type="text" style="border:none;"
+                                            placeholder="comment here..." name="comment_txt" id="comment" row="2"
+                                            col="3" value=""></textarea>
+                                        <input type="submit" class="btn default submit" value="Send" title="submit"
+                                            name="subcomment" src="img/sendtext.PNG" alt="Send" width=30px
+                                            height=22px />
+                                        <i class="bi bi-cursor"></i>
+                                </form>
+                            </div>
+                            <?php
                                                 $query = "SELECT * FROM user_post_comment WHERE post_id=$post_id ORDER BY comment_id";
                                                 $statement = $dbconn->prepare($query);
                                                 $statement->execute();
@@ -410,112 +403,112 @@ include("index_background.php");
                                                 $count = $statement->rowCount();
                                                 ?>
 
-                                <span> &nbsp; <input type="button" value="Comment(<?php echo $count; ?>)"
-                                        style="background:#FFFFFF; border:#FFFFFF;font-size:15px; color:#6D84C4;"
-                                        onClick="Comment_focus(<?php echo $post_id; ?>);"
-                                        onMouseOver="Comment_underLine(<?php echo $post_id; ?>)"
-                                        onMouseOut="Comment_NounderLine(<?php echo $post_id; ?>)"
-                                        id="comment<?php echo $post_id; ?>">
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span style="color:#999999;"> </span>
-                                </span>
-                            </div>
+                            <span> &nbsp; <input type="button" value="Comment(<?php echo $count; ?>)"
+                                    style="background:#FFFFFF; border:#FFFFFF;font-size:15px; color:#6D84C4;"
+                                    onClick="Comment_focus(<?php echo $post_id; ?>);"
+                                    onMouseOver="Comment_underLine(<?php echo $post_id; ?>)"
+                                    onMouseOut="Comment_NounderLine(<?php echo $post_id; ?>)"
+                                    id="comment<?php echo $post_id; ?>">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span style="color:#999999;"> </span>
+                            </span>
+                        </div>
 
-                            <?php
+                        <?php
                                             foreach ($result4 as $comment_data) {
                                                 $comment_id = $comment_data[0];
                                                 $comment_user_id = $comment_data[1];
                             ?>
-                            <?php
+                        <?php
                                                 $clen = strlen($comment_data[3]);
                                                 if ($clen > 0 && $clen <= 60) {
                                                     $cline1 = substr($comment_data[3], 0, 60);
                                 ?>
-                            <tr>
-                                <td> </td>
-                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2"><img
-                                        src="../uploads/profile/<?php echo $user_pic; ?> " height="20px" width="20px"
-                                        border-radius="50px" />
-                                    <?php echo '<b>' . $user_name . '</b>'; ?>
-                                    <?php echo '<b>' . $user_name2 . '</b>'; ?>
-                                    <?php echo '<b>' . $user_name3 . '</b>'; ?>
-                                    <?php echo $cline1; ?></td>
-                            </tr>
-                            <?php
+                        <tr>
+                            <td> </td>
+                            <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2"><img
+                                    src="../uploads/profile/<?php echo $user_pic; ?> " height="20px" width="20px"
+                                    border-radius="50px" />
+                                <?php echo '<b>' . $user_name . '</b>'; ?>
+                                <?php echo '<b>' . $user_name2 . '</b>'; ?>
+                                <?php echo '<b>' . $user_name3 . '</b>'; ?>
+                                <?php echo $cline1; ?></td>
+                        </tr>
+                        <?php
                                                 } else if ($clen > 60 && $clen <= 120) {
                                                     $cline1 = substr($comment_data[3], 0, 60);
                                                     $cline2 = substr($comment_data[3], 60, 60);
                                 ?>
-                            <tr>
-                                <td> </td>
-                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                    <?php echo $cline1; ?></td>
-                            </tr>
-                            <tr>
-                                <td> </td>
-                                <td bgcolor="#EDEFF4"> </td>
-                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                    <?php echo $cline2; ?></td>
-                            </tr>
-                            <?php
+                        <tr>
+                            <td> </td>
+                            <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                <?php echo $cline1; ?></td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td bgcolor="#EDEFF4"> </td>
+                            <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                <?php echo $cline2; ?></td>
+                        </tr>
+                        <?php
                                                 } else if ($clen > 120 && $clen <= 180) {
                                                     $cline1 = substr($comment_data[3], 0, 60);
                                                     $cline2 = substr($comment_data[3], 60, 60);
                                                     $cline3 = substr($comment_data[3], 120, 60);
                                 ?>
-                            <tr>
-                                <td> </td>
-                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                    <?php echo $cline1; ?></td>
-                            </tr>
-                            <tr>
-                                <td> </td>
-                                <td bgcolor="#EDEFF4"> </td>
-                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                    <?php echo $cline2; ?></td>
-                            </tr>
-                            <tr>
-                                <td> </td>
-                                <td bgcolor="#EDEFF4"> </td>
-                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                    <?php echo $cline3; ?></td>
-                            </tr>
-                            <?php
+                        <tr>
+                            <td> </td>
+                            <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                <?php echo $cline1; ?></td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td bgcolor="#EDEFF4"> </td>
+                            <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                <?php echo $cline2; ?></td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td bgcolor="#EDEFF4"> </td>
+                            <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                <?php echo $cline3; ?></td>
+                        </tr>
+                        <?php
                                                 } else if ($clen > 180 && $clen <= 240) {
                                                     $cline1 = substr($comment_data[3], 0, 60);
                                                     $cline2 = substr($comment_data[3], 60, 60);
                                                     $cline3 = substr($comment_data[3], 120, 60);
                                                     $cline4 = substr($comment_data[3], 180, 60);
                                 ?>
-                            <table>
-                                <tr>
-                                    <td> </td>
-                                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                        <?php echo $cline1; ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td> </td>
-                                    <td bgcolor="#EDEFF4"> </td>
-                                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                        <?php echo $cline2; ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td> </td>
-                                    <td bgcolor="#EDEFF4"> </td>
-                                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                        <?php echo $cline3; ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td> </td>
-                                    <td bgcolor="#EDEFF4"> </td>
-                                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                        <?php echo $cline4; ?>
-                                    </td>
-                                </tr>
-                                <?php
+                        <table>
+                            <tr>
+                                <td> </td>
+                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                    <?php echo $cline1; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td bgcolor="#EDEFF4"> </td>
+                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                    <?php echo $cline2; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td bgcolor="#EDEFF4"> </td>
+                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                    <?php echo $cline3; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td bgcolor="#EDEFF4"> </td>
+                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                    <?php echo $cline4; ?>
+                                </td>
+                            </tr>
+                            <?php
                                                 } else if ($clen > 240 && $clen <= 300) {
                                                     $cline1 = substr($comment_data[3], 0, 60);
                                                     $cline2 = substr($comment_data[3], 60, 60);
@@ -523,41 +516,41 @@ include("index_background.php");
                                                     $cline4 = substr($comment_data[3], 180, 60);
                                                     $cline5 = substr($comment_data[3], 240, 60);
                                     ?>
-                                <tr>
-                                    <td> </td>
-                                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                        <?php echo $cline1; ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td> </td>
-                                    <td bgcolor="#EDEFF4"> </td>
-                                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                        <?php echo $cline2; ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td> </td>
-                                    <td bgcolor="#EDEFF4"> </td>
-                                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                        <?php echo $cline3; ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td> </td>
-                                    <td bgcolor="#EDEFF4"> </td>
-                                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                        <?php echo $cline4; ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td> </td>
-                                    <td bgcolor="#EDEFF4"> </td>
-                                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                        <?php echo $cline5; ?>
-                                    </td>
-                                </tr>
-                                <?php
+                            <tr>
+                                <td> </td>
+                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                    <?php echo $cline1; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td bgcolor="#EDEFF4"> </td>
+                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                    <?php echo $cline2; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td bgcolor="#EDEFF4"> </td>
+                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                    <?php echo $cline3; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td bgcolor="#EDEFF4"> </td>
+                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                    <?php echo $cline4; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td bgcolor="#EDEFF4"> </td>
+                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                    <?php echo $cline5; ?>
+                                </td>
+                            </tr>
+                            <?php
                                                 } else if ($clen > 300 && $clen <= 360) {
                                                     $cline1 = substr($comment_data[3], 0, 60);
                                                     $cline2 = substr($comment_data[3], 60, 60);
@@ -566,48 +559,48 @@ include("index_background.php");
                                                     $cline5 = substr($comment_data[3], 240, 60);
                                                     $cline6 = substr($comment_data[3], 300, 60);
                                     ?>
-                                <tr>
-                                    <td> </td>
-                                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                        <?php echo $cline1; ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td> </td>
-                                    <td bgcolor="#EDEFF4"> </td>
-                                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                        <?php echo $cline2; ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td> </td>
-                                    <td bgcolor="#EDEFF4"> </td>
-                                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                        <?php echo $cline3; ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td> </td>
-                                    <td bgcolor="#EDEFF4"> </td>
-                                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                        <?php echo $cline4; ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td> </td>
-                                    <td bgcolor="#EDEFF4"> </td>
-                                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                        <?php echo $cline5; ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td> </td>
-                                    <td bgcolor="#EDEFF4"> </td>
-                                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                        <?php echo $cline6; ?>
-                                    </td>
-                                </tr>
-                                <?php
+                            <tr>
+                                <td> </td>
+                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                    <?php echo $cline1; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td bgcolor="#EDEFF4"> </td>
+                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                    <?php echo $cline2; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td bgcolor="#EDEFF4"> </td>
+                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                    <?php echo $cline3; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td bgcolor="#EDEFF4"> </td>
+                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                    <?php echo $cline4; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td bgcolor="#EDEFF4"> </td>
+                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                    <?php echo $cline5; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td bgcolor="#EDEFF4"> </td>
+                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                    <?php echo $cline6; ?>
+                                </td>
+                            </tr>
+                            <?php
                                                 } else if ($clen > 360 && $clen <= 420) {
                                                     $cline1 = substr($comment_data[3], 0, 60);
                                                     $cline2 = substr($comment_data[3], 60, 60);
@@ -617,75 +610,75 @@ include("index_background.php");
                                                     $cline6 = substr($comment_data[3], 300, 60);
                                                     $cline7 = substr($comment_data[3], 360, 60);
                                     ?>
-                                <tr>
-                                    <td> </td>
-                                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                        <?php echo $cline1; ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td> </td>
-                                    <td bgcolor="#EDEFF4"> </td>
-                                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                        <?php echo $cline2; ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td> </td>
-                                    <td bgcolor="#EDEFF4"> </td>
-                                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                        <?php echo $cline3; ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td> </td>
-                                    <td bgcolor="#EDEFF4"> </td>
-                                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                        <?php echo $cline4; ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td> </td>
-                                    <td bgcolor="#EDEFF4"> </td>
-                                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                        <?php echo $cline5; ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td> </td>
-                                    <td bgcolor="#EDEFF4"> </td>
-                                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                        <?php echo $cline6; ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td> </td>
-                                    <td bgcolor="#EDEFF4"> </td>
-                                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
-                                        <?php echo $cline7; ?>
-                                    </td>
-                                </tr>
-                            </table>
-                            <?php
+                            <tr>
+                                <td> </td>
+                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                    <?php echo $cline1; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td bgcolor="#EDEFF4"> </td>
+                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                    <?php echo $cline2; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td bgcolor="#EDEFF4"> </td>
+                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                    <?php echo $cline3; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td bgcolor="#EDEFF4"> </td>
+                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                    <?php echo $cline4; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td bgcolor="#EDEFF4"> </td>
+                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                    <?php echo $cline5; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td bgcolor="#EDEFF4"> </td>
+                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                    <?php echo $cline6; ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td bgcolor="#EDEFF4"> </td>
+                                <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                                    <?php echo $cline7; ?>
+                                </td>
+                            </tr>
+                        </table>
+                        <?php
                                                 }
                                 ?>
 
-                            <?php
+                        <?php
                                             }
                                         }
                                     }
-                                }
+                                
 
                 ?>
-                            <div class="img-fluid loader">
-                                <!-- image loader -->
-                                <img src="img/loader.gif" class="img-fluid" width=100%>
-                            </div>
-                            <div class="msg"></div>
+                        <div class="img-fluid loader">
+                            <!-- image loader -->
+                            <img src="img/loader.gif" class="img-fluid" width=100%>
                         </div>
-
+                        <div class="msg"></div>
                     </div>
+
                 </div>
+            </div>
     </section>
 
 
@@ -696,7 +689,7 @@ include("index_background.php");
          you can uncomment the import below
          if it's a script you wrote yourself -->
 
-    <!-- <script src='js/jquery.js'></script> -->
+    <!-- <script src='Profile_js/pagination.js'></script> -->
     <script>
     function triggerClick() {
         document.querySelector('#profileImage').click();

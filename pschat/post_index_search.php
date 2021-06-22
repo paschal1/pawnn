@@ -84,7 +84,7 @@ if ( isset( $_POST['search'] ) ) {
 
     //$id = $_SESSION['id'];
 
-    $query = ( "SELECT * FROM users   WHERE firstname LIKE  '%$searchq%' OR middlename LIKE  '%$searchq%' OR lastname LIKE  '%$searchq%'  LIMIT 5" ) or die( 'could not search' );
+    $query = ( "SELECT * FROM  users   WHERE firstname LIKE  '%$searchq%' OR middlename LIKE  '%$searchq%' OR lastname LIKE  '%$searchq%'  LIMIT 5" ) or die( 'could not search' );
     $statement = $dbconn->prepare( $query );
     $statement ->execute();
     $result = $statement ->fetchAll();

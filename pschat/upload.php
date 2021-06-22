@@ -50,7 +50,7 @@ include('database_connect.php');
         
                 
 }else{
-    header("location: post_index.php"); 
+    header("location: index.php"); 
 } 
      }else{
                 $msg ="Profile Picture Uploaded Failed";

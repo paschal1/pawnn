@@ -3,7 +3,7 @@ require_once 'pdoconfig.php';
 try{
    //database_connection charset=utf8mb4;
 $dbconn = new PDO("mysql:host=$host;  dbname=$dbname", $username, $password);
- echo "conneted successfully.";
+ echo "";
 
 }catch
 (PDOException $pe)
