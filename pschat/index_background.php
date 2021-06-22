@@ -149,6 +149,7 @@ function closeNav() {
             style="border:1px orangered solid;padding: 5px;width:32%;color:gray">Services</a> <br>
         <a href="../../website/website/page/home.php"
             style="border:1px orangered solid;padding: 5px;width:32%;color:gray">Clients</a> <br>
+        <a href="action2.php" style="border:1px orangered solid;padding: 5px;width:32%;color:gray">Members</a> <br>
         <a href="../../website/website/page/contactus.php"
             style="boder:1px orangered  solid;padding: 5px;width:32%;color:gray">Contact</a>
 
