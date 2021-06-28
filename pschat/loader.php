@@ -12,165 +12,281 @@ include('database_connect.php');
 include('functions.php');
 //error_reporting(1);
 
-// background page comes in
-include("index_background.php");
-
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="h-100">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="epsimage/icon.png" type="image/png">
-    <link rel="icon" type="image/png" class="img-fluid" href="epsimage/icon.PNG">
-    <title>Epspawn</title>
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-    <!-- jquery link -->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <!-- css links -->
+    <title>Website menu 02</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="css/loader.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
-    <!-- bootstrapcdn links -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
 
 
 </head>
 
-<body>
-    <!-- form for posting goes here -->
+<body class="h-100">
+    <section class="ftco-section">
+        <!-- <div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Website menu #02</h2>
+				</div>
+			</div>
+		</div> -->
 
-    <!-- i want the page note to reload when submit button is clicked -->
-
-    <form method="post" action="upload.php" enctype="multipart/form-data" name="post_pic" id="formdata">
         <div class="container">
-            <label for="" class="form-group ">
-                <textarea class="form-control" name="post_txt"
-                    placeholder="<?php echo 'Tell us what about what you want to sell';?>"
-                    id="post_txt">What's your thought</textarea>
-            </label><br> <br>
-            <label for="" class="form-group ">
-                Enter Price<input type="text" name="price" class="form-control" placeholder="Enter Price" id="p">
-            </label>
-            <label for="" class="form-group ">
-                Enter Qty<input type="text" name="qty" class="form-control" placeholder="Enter Qty" id="q">
-            </label><br> <br>
-            <label for="" class="form-group ">
-                <input type="hidden" name="post_time">
-            </label>
-            <label for="" class="form-group ">
-                <select name="priority" class="form-control" id="priority">
-                    <option value="Public">Public </option>
-                    <option value="Private">Only me </option>
-                </select>
-            </label>
-            <label for="" class="form-group ">
-                <span><img src="img/download.JPEG" style=" height:20px; width:20px;" id="post_img"
-                        onclick="triggerClick()" />Add Photo </span>
-            </label>
-            <label for="" class="form-group ">
-                <input type="file" id="profileImage" id="postimage" onchange="displayImage(this)" name="post_pic"
-                    style="display:none;" multiple>
-            </label>
-            <label for="" class="form-group ">
-                <input class="btn btn btn-default submit" type="submit" value="Upload" name="file" id="profileImage"
-                    onClick="time_get()" />
-            </label>
+            <div class="row justify-content-between">
+                <div class="col">
+                    <a class="navbar-brand" href="index.html"><img src="epsimage/icon.png" width="70" alt="EPS">
+                        <span>Pawn</span></a>
+                </div>
+                <div class="col d-flex justify-content-end">
+                    <div class="social-media">
+                        <p class="mb-0 d-flex">
+                            <a href="#" class="d-flex align-items-center justify-content-center"><span
+                                    class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+                            <a href="#" class="d-flex align-items-center justify-content-center"><span
+                                    class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+                            <a href="#" class="d-flex align-items-center justify-content-center"><span
+                                    class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+                            <a href="#" class="d-flex align-items-center justify-content-center"><span
+                                    class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </form>
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+            <div class="container">
 
-    <div class="wrapper">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                    aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span> Menu
+                </button>
+                <form action="#" class="searchform order-lg-last">
+                    <div class="form-group d-flex">
+                        <input type="text" class="form-control pl-3" placeholder="Search">
+                        <button type="submit" placeholder="" class="form-control search"><span
+                                class="fa fa-search"></span></button>
+                    </div>
+                </form>
+                <div class="collapse navbar-collapse" id="ftco-nav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active"><a href="../pages/user_index.php" class="nav-link">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">You</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="loader.php">Add Post</a>
+                                <a class="dropdown-item" href="status.php">Goods Area</a>
+                                <a class="dropdown-item" href="chat.php">Chats</a>
+                                <a class="dropdown-item" href="action2.php">Partners</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="../../website/website/page/product.php" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item"><a href="../../website/website/page/services.php"
+                                class="nav-link">Services</a>
+                        </li>
+                        <li class="nav-item"><a href="../../website/website/page/contactus.php"
+                                class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- END nav -->
+
+
+
+
+        <!-- form for posting goes here -->
+
+        <!-- i want the page note to reload when submit button is clicked -->
+        <div class="container h-100" style="padding:15px;">
+            <div class="row h-100 justify-content-center align-items-center">
+                <div class="col-10 col-md-8 col-lg-6">
+
+                    <form method=" post" action="upload.php" enctype="multipart/form-data" name="post_pic"
+                        id="formdata">
+                        <div class="container">
+                            <label for="" class="form-group ">
+                                <textarea class="form-control" name="post_txt"
+                                    placeholder="<?php echo 'Tell us what about what you want to sell';?>"
+                                    id="post_txt">What's your thought</textarea>
+                            </label><br> <br>
+                            <label for="" class="form-group ">
+                                Enter Price<input type="text" name="price" class="form-control"
+                                    placeholder="Enter Price" id="p">
+                            </label>
+                            <label for="" class="form-group ">
+                                Enter Qty<input type="text" name="qty" class="form-control" placeholder="Enter Qty"
+                                    id="q">
+                            </label><br> <br>
+                            <label for="" class="form-group ">
+                                <input type="hidden" name="post_time">
+                            </label>
+                            <label for="" class="form-group ">
+                                <select name="priority" class="form-control" id="priority">
+                                    <option value="Public">Public </option>
+                                    <option value="Private">Only me </option>
+                                </select>
+                            </label>
+                            <label for="" class="form-group ">
+                                <span><img src="img/download.JPEG" style=" height:20px; width:20px;" id="post_img"
+                                        onclick="triggerClick()" />Add Photo </span>
+                            </label>
+                            <label for="" class="form-group ">
+                                <input type="file" id="profileImage" id="postimage" onchange="displayImage(this)"
+                                    name="post_pic" style="display:none;" multiple>
+                            </label>
+                            <label for="" class="form-group ">
+                                <input class="btn btn btn-default submit" type="submit" value="Upload" name="file"
+                                    id="profileImage" onClick="time_get()" />
+                            </label>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- <div class="wrapper1"> -->
         <?php
 
 
 
                                 //fetched first 4 data from db for pagination from user post
-                                $query = ("SELECT * FROM user_post WHERE priority ='public' ORDER BY post_id DESC LIMIT 0, 4");
-                                $statement = $dbconn->prepare($query);
-                                $statement->execute();
-                                $result = $statement->fetchAll();
-                                $count = $dbconn->query('SELECT * FROM user_post');
-                                $num = $count->rowCount();
+                                // $query = ("SELECT * FROM user_post WHERE priority ='public' ORDER BY post_id DESC LIMIT 0, 4");
+                                // $statement = $dbconn->prepare($query);
+                                // $statement->execute();
+                                // $result = $statement->fetchAll();
+                                // $count = $dbconn->query('SELECT * FROM user_post');
+                                // $num = $count->rowCount();
 
                                 ?>
-        <?php echo '<span style="color:green;">Users have</span> ' . $num . ' <span style="color:green;">items to be sold in our website <p>Buy now or Add yours</p></span>'; ?>
         <?php
-                                foreach ($result as $post_data) {
+        //  echo '<span style="color:green;">Users have</span> ' . $num . ' <span style="color:green;">items to be sold in our website <p>Buy now or Add yours</p></span>'; 
+         ?>
+        <?php
+                                // foreach ($result as $post_data) {
 
-                                    $post_id = $post_data[0];
-                                    $user_id = $post_data[1];
-                                    $post_txt = $post_data[2];
-                                    $post_img = $post_data[7];
-                                    $post_price = $post_data[3];
-                                    $qty = $post_data[4];
+                                //     $post_id = $post_data[0];
+                                //     $user_id = $post_data[1];
+                                //     $post_txt = $post_data[2];
+                                //     $post_img = $post_data[7];
+                                //     $post_price = $post_data[3];
+                                //     $qty = $post_data[4];
 
                                     
-                                    // from users table
-                                    $query = "SELECT * FROM users WHERE user_id= '$user_id'";
-                                    $statement = $dbconn->prepare($query);
-                                    $statement->execute();
-                                    $result1 = $statement->fetchAll();
-                                    foreach ($result1 as $fetch_user_info) {
-                                        $users = $fetch_user_info['user_id'];
-                                        $user_name = $fetch_user_info[1];
-                                        $user_name2 = $fetch_user_info[2];
-                                        $user_name3 = $fetch_user_info[3];
-                                        $user_Email = $fetch_user_info[5];
-                                        $user_gender = $fetch_user_info[10];
-                                            $output = "";
+                                //     // from users table
+                                //     $query = "SELECT * FROM users WHERE user_id= '$user_id'";
+                                //     $statement = $dbconn->prepare($query);
+                                //     $statement->execute();
+                                //     $result1 = $statement->fetchAll();
+                                //     foreach ($result1 as $fetch_user_info) {
+                                //         $users = $fetch_user_info['user_id'];
+                                //         $user_name = $fetch_user_info[1];
+                                //         $user_name2 = $fetch_user_info[2];
+                                //         $user_name3 = $fetch_user_info[3];
+                                //         $user_Email = $fetch_user_info[5];
+                                //         $user_gender = $fetch_user_info[10];
+                                //             $output = "";
 
                                             
                                          //from profile pic table
-                                        $query = "SELECT  *FROM user_profile_pic  WHERE user_id='$users' ORDER BY timeCreated DESC";
-                                        $statement = $dbconn->prepare($query);
-                                        $statement->execute();
-                                        $result2 = $statement->fetchAll();
-                                        foreach ($result2 as $loop_key => $fetch_user_pic) {
+                                        // $query = "SELECT  *FROM user_profile_pic  WHERE user_id='$users' ORDER BY timeCreated DESC";
+                                        // $statement = $dbconn->prepare($query);
+                                        // $statement->execute();
+                                        // $result2 = $statement->fetchAll();
+                                        // foreach ($result2 as $loop_key => $fetch_user_pic) {
 
-                                            $user_pic = $fetch_user_pic[2];
-                                            $user_pic1 = $fetch_user_pic[0];
+                                        //     $user_pic = $fetch_user_pic[2];
+                                        //     $user_pic1 = $fetch_user_pic[0];
 
 
 ?>
-        <div class=" wrapper">
-            <div style="padding-top:4px; padding-bottom:7px;">
-                <?php if ($user_pic != "") : ?>
-                <span><img src="../uploads/profile/<?php echo $user_pic; ?> " height="40px" width="40px"
-                        class="img-circle" /> </span>
-                <?php else : ?>
-                <img src="img/user.jpeg" height="40px" width="100%" class="img-circle" id="profileDisplay"
-                    onclick="triggerClick()" />
-                <?php endif; ?>
-                <?php $output .= '<span><button type="button" class="view_user" id="' . $fetch_user_info['user_id'] . '" style="border:none; background-color:white;">' . $user_name . '  ' . $user_name2 . '  ' . $user_name3 . '</button></span>'; ?>
-                <?php echo $output; ?>
-            </div>
+        <!-- <div class=" wrapper">
+        <div style="padding-top:4px; padding-bottom:7px;">
+            <?php 
+            // if ($user_pic != "") : 
+                ?>
+            <span><img src="../uploads/profile/<?php 
+            // echo $user_pic; 
+            ?> " height="40px" width="40px"
+                    class="img-circle" /> </span>
+            <?php 
+            // else :
+                
+                 ?>
+            <img src="img/user.jpeg" height="40px" width="100%" class="img-circle" id="profileDisplay"
+                onclick="triggerClick()" />
+            <?php 
+            // endif;
+             ?>
+            <?php
+            //  $output .= '<span><button type="button" class="view_user" id="' . $fetch_user_info['user_id'] . '" style="border:none; background-color:white;">' . $user_name . '  ' . $user_name2 . '  ' . $user_name3 . '</button></span>'; 
+             ?>
+            <?php 
+            // echo $output; 
+            // ?>
+        </div>
 
-            <?php if ($post_img != "") : ?>
-            <img src="../uploads/<?php echo $post_img; ?>" width="50%" height="10px" class="img-thumbnail" />
+        <?php 
+        // if ($post_img != "") : 
+            ?>
+        <img src="../uploads/<?php
+        //  echo $post_img; 
+        //  ?>" width="50%" height="10px" class="img-thumbnail" />
 
-            <?php else : ?>
-            <img src="../uploads/default.jpg" width="100%" height="200px" class="img-thumbnail" />
-            <?php endif; ?>
-            <p><?php echo $post_data[2]; ?></p>
-            <p><?php echo $post_data[4] . ' Item in Stock'; ?></p>
+        <?php 
+        // else :
+             ?>
+        <img src="../uploads/default.jpg" width="100%" height="200px" class="img-thumbnail" />
+        <?php 
+        // endif; 
+        ?>
+        <p><?php
+        // 
+        //  echo $post_data[2]; 
+         ?></p>
+        <p><?php 
+        // echo $post_data[4] . ' Item in Stock';
+         ?></p>
 
-            <span>&#8358;<?php echo $post_data[3]; $from_user_id = $_SESSION['id'];?>
+        <span>&#8358;<?php
+        //  echo $post_data[3]; $from_user_id = $_SESSION['id'];
+        ?>
 
-            </span>
-            <form method="post">
-                <span> <a href="user_post_details.php?post_id=<?php echo $post_id; ?>"><button type="button"
-                            class="btn btn-warning btn-xs edit" id="<?php echo $post_data[1]; ?>">Order</button></a>
-            </form>
-            <!-- this is one of the form causing the issue with this form send message to user who
+        </span>
+        <form method="post">
+            <span> <a href="user_post_details.php?post_id=<?php 
+            // echo $post_id; 
+            // ?>"><button type="button"
+                        class="btn btn-warning btn-xs edit" id="<?php 
+                        // echo $post_data[1]; 
+                        ?>">Order</button></a>
+        </form> -->
+        <!-- this is one of the form causing the issue with this form send message to user who
                                     post i want the page note to reload when submit button is clicked -->
-            <form method="post" action="" data-sendmessage-form-id="<?php echo $loop_key; ?>">
-                <input type="hidden" name="to_user_id" display="none" value="<?php echo $user_id;?>">
+        <!-- <form method="post" action="" data-sendmessage-form-id="<?php 
+    // echo $loop_key; 
+    ?>">
+                <input type="hidden" name="to_user_id" display="none" value="<?php 
+                // echo $user_id;
+                ?>">
 
-                <input type="hidden" name="from_user_id" display="none" value="<?php echo $from_user_id;?>">
+                <input type="hidden" name="from_user_id" display="none" value="<?php
+                //  echo $from_user_id;
+                //  ?>">
                 <input type="hidden" name="chat_message" display="none" value="Is this Available">
                 <button type="submit" name="send_message" class="btn btn-success btn-round pull-right submit"
                     data-toggle="modal" data-target="#myModal">
@@ -179,29 +295,38 @@ include("index_background.php");
 
             <!-- here you should either choose to submit call a modal here or submit this form
                                              or do both programmatically from a function -->
-            <!-- i set it to calling the modal -->
+        <!-- i set it to calling the modal -->
 
-            </span>
-
-
-
-            <!-- comment box goes here -->
+        <!-- </span> -->
 
 
-            <button type="button" placeholder="" style="border:none; background-color:white; " id="comment2" width=15%>
-                <?php if ($user_pic != "") : ?>
-                <img src="../uploads/profile/<?php echo $user_pic2; ?> " height="20px" width="20px"
+
+        <!-- comment box goes here -->
+
+
+        <!-- <button type="button" placeholder="" style="border:none; background-color:white; " id="comment2" width=15%>
+                <?php 
+                // if ($user_pic != "") :
+                     ?>
+                <img src="../uploads/profile/<?php
+                //  echo $user_pic2;
+                 ?> " height="20px" width="20px"
                     border-radius="50px" />
-                <?php else : ?>
+                <?php 
+                // else : 
+                ?>
                 <img src="img/user.jpeg" style=" height:20; width:20; border-radius:50px;" />
-                <?php endif; ?>
+                <?php 
+                // endif;
+                
+                 ?>
 
-                Drop your comment...</button>
-            <!-- // here goes the comment for
+                Drop your comment...</button> -->
+        <!-- // here goes the comment for
                                     m -->
-            <!-- this is one of the form causing the issue with this form send comment to user who
+        <!-- this is one of the form causing the issue with this form send comment to user who
                                     post i want the page note to reload when submit button is clicked -->
-            <form method="post" action="" class="form-group" data-comment-form-id="<?php echo $loop_key; ?>">
+        <!-- <form method="post" action="" class="form-group" data-comment-form-id="<?php echo $loop_key; ?>">
                 <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                 <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
                 <div class="form-group">
@@ -216,9 +341,33 @@ include("index_background.php");
         <hr>
 
     </div>
+    </div> -->
+        <?php 
+    // } } } 
+    ?>
+
+
+
+        <!-- // <div class="img-fluid loader"> -->
+        <!-- image loader -->
+        <!-- <img src="img/loader.gif" class="img-fluid" width=100%>
     </div>
-    <?php } } } ?>
+    <div class="msg"></div> -->
+        <!-- <script src='Profile_js/pagination.js'></script> -->
+
+    </section>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
 </body>
+
+
+
+
+
 <script>
 function triggerClick() {
     document.querySelector('#profileImage').click();
