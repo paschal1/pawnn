@@ -87,6 +87,7 @@ include('functions.php');
                                 <a class="dropdown-item" href="status.php">Goods Area</a>
                                 <a class="dropdown-item" href="chat.php">Chats</a>
                                 <a class="dropdown-item" href="action2.php">Partners</a>
+                                <a class="dropdown-item" href="index_once.php">Product Feeds</a>
                             </div>
                         </li>
                         <li class="nav-item"><a href="../../website/website/page/product.php" class="nav-link">About</a>
