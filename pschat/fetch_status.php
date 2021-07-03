@@ -52,21 +52,21 @@ if(isset($_POST['getData'])){
           {
          
         if($i % 3==0){
-      $record_id.='<tr><td><div class="img-fluid"  >
+      $record_id.='<tr><td><div>
       <span style="padding:1px;" margin:0px; padding-right:0px; border-spacing: 15px;><span class="circle" ><img src="../uploads/profile/'.$dat['image'].'" height="50px" width="30px" class="img-circle" 
-      </span> '.$da[3].' '.$da[4].'
+      </span> <span style="padding:0px;">'.$da[3].'</span> <span style="padding:0px;">'.$da[4].'</span>
        <img class="img-thumbnail image" src="uploads/'.$data[7].'"/>
         
        <p> <i class="fa fa-star  btn-danger"></i>'.$data[2].' </p><span>&#8358;'.$data[3].' </span>
        <p> <i class="far fa-map-marker-alt"></i>'.$data[6].'</p>
         <a href="status_text.php?post_id=<?php echo $post_id; ?>"><button type="button"
     class="btn btn-warning btn-xs edit" id="<?php echo $post_data[1]; ?>">Order</button></a>
-<hr>
+
 <span>
     <p> <i></i> </p>
     <p><i></i></p>
 
-    <hr>
+
 </span>
 </div>
 ';
@@ -82,11 +82,11 @@ $record_id.='<td>
                 <p><i></i>'.$data[6].'</p>
                 <a href="status_text.php?post_id='.$post_id.' "><button type="button"
                         class="btn btn-warning btn-xs edit" id="<?php echo $post_data[1]; ?>">Order</button></a>
-                <hr>
+
                 <span>
                     <p> <i class="fa-product-hunt></i>  </p>
           <p><i class=" fa-quantity"></i></p>
-                    <hr>
+
                 </span>
 
     </div>

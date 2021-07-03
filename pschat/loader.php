@@ -69,7 +69,7 @@ include('functions.php');
                     aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="fa fa-bars"></span> Menu
                 </button>
-                <form action="#" class="searchform order-lg-last">
+                <form action="post_index_search.php" method="post" class="searchform order-lg-last">
                     <div class="form-group d-flex">
                         <input type="text" class="form-control pl-3" placeholder="Search">
                         <button type="submit" placeholder="" class="form-control search"><span
@@ -83,7 +83,7 @@ include('functions.php');
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">You</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown04">
-                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="pawn_step1/user_settings1.php">Profile</a>
                                 <a class="dropdown-item" href="loader.php">Add Post</a>
                                 <a class="dropdown-item" href="status.php">Goods Area</a>
                                 <a class="dropdown-item" href="chat.php">Chats</a>

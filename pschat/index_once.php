@@ -17,15 +17,27 @@ include('functions.php');
 <html lang="en">
 
 <head>
-    <title>Website menu 02</title>
+    <title>Epspawn menu </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
+    <link rel="shortcut icon" href="epsimage/icon.png" type="image/png">
+    <link rel="icon" type="image/png" class="img-fluid" href="epsimage/icon.PNG">
+
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
-
+    <!-- bootstrapcdn links -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <!-- jquery link -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- // ajax script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- css -->
     <link rel="stylesheet" href="css/style.css">
+
+
 
 </head>
 
@@ -68,10 +80,10 @@ include('functions.php');
                     aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="fa fa-bars"></span> Menu
                 </button>
-                <form action="#" class="searchform order-lg-last">
+                <form action="post_index_search.php" method="post" class="searchform order-lg-last">
                     <div class="form-group d-flex">
-                        <input type="text" class="form-control pl-3" placeholder="Search">
-                        <button type="submit" placeholder="" class="form-control search"><span
+                        <input type="text" name="search" class="form-control pl-3" placeholder="Search">
+                        <button type="submit" placeholder="" name="search" class="form-control search"><span
                                 class="fa fa-search"></span></button>
                     </div>
                 </form>
@@ -82,7 +94,7 @@ include('functions.php');
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">You</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown04">
-                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="pawn_step1/user_settings1.php">Profile</a>
                                 <a class="dropdown-item" href="loader.php">Add Post</a>
                                 <a class="dropdown-item" href="status.php">Goods Area</a>
                                 <a class="dropdown-item" href="chat.php">Chats</a>
@@ -119,19 +131,34 @@ include('functions.php');
             $userid = $rows['user_id'];
             $post_id = $rows['post_id'];
 
-        $query1="SELECT users.firstname, users.middlename, users.lastname, user_profile_pic.image FROM users, user_profile_pic WHERE $userid = users.user_id=user_profile_pic.user_id ORDER BY user_profile_pic.timeCreated"; 
+
+
+
+             $query2 = "SELECT  *FROM user_profile_pic  WHERE user_id='$userid' ORDER BY timeCreated DESC";
+                $statement = $dbconn->prepare( $query2 );
+                $statement ->execute();
+                $result2 = $statement->fetchAll();
+                foreach ( $result2 as $fetch_user_pic ) {
+
+                     $image = $fetch_user_pic ['image'];
+                     
+        $query1="SELECT * FROM users WHERE $userid = user_id"; 
+        // $query1="SELECT users.firstname, users.middlename, users.lastname, user_profile_pic.image FROM users, user_profile_pic WHERE $userid = users.user_id=user_profile_pic.user_id ORDER BY user_profile_pic.timeCreated"; 
         $statement = $dbconn->prepare($query1);
         $statement->execute();
         $result1 = $statement->fetchAll();
         foreach($result1 as $loop_key => $row){
 
 
-         $image = $row['image'];
+        
         $user_name = $row['firstname'];
        $user_name2 =$row['middlename'];
        $user_name3 =$row['lastname'];
        $output ='';
 
+    
+
+               
 
            ?>
 
@@ -144,8 +171,9 @@ include('functions.php');
             <div class="card border-none mb-3 center" style="max-width: 30rem;">
 
                 <div class="card-body text-success">
-                    <?php if ($row['image'] != "") : ?> <span><img src="../uploads/profile/<?php echo $image; ?> "
-                            height="40px" width="40px" class="img-circle" /> </span>
+                    <?php if ($fetch_user_pic['image'] != "") : ?> <span>
+                        <img src="../uploads/profile/<?php echo $image; ?> " height="40px" width="40px"
+                            class="img-circle" /> </span>
                     <?php else : ?>
                     <img src="img/user.jpeg" height="40px" width="100%" class="img-circle" id="profileDisplay"
                         onclick="triggerClick()" />
@@ -213,7 +241,7 @@ include('functions.php');
 
                     <button type="button" placeholder="" style="border:none; background-color:white; " id="comment2"
                         width=15%>
-                        <?php if ($row['image'] != "") : ?>
+                        <?php if ($fetch_user_pic['image'] != "") : ?>
                         <img src="../uploads/profile/<?php echo $image; ?>" height="20px" width="20px"
                             border-radius="50px" />
                         <?php else : ?>
@@ -500,7 +528,7 @@ include('functions.php');
                     </tr>
                 </table>
                 <?php
-                                                   }       }
+                               }       }
                                 ?>
             </div>
 
@@ -518,7 +546,7 @@ include('functions.php');
 
         }
         }
-
+    }
         ?>
 
 
@@ -527,10 +555,10 @@ include('functions.php');
         <!-- <img src="img/loader.gif" class="img-fluid" width=100%>
     </div>
     <div class="msg"></div> -->
-        <script src='Profile_js/pagination.js'></script>
+
 
     </section>
-
+    <script src='Profile_js/pagination.js'></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>

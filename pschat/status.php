@@ -31,7 +31,7 @@ include('../config/dbconn.php');
     <title>Market Area</title>
     <style type="text/css">
     .wrapper {
-        width: 500px;
+        width: 600px;
         margin: 0 auto;
         text-align: center;
     }
