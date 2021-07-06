@@ -138,7 +138,7 @@ include('functions.php');
                 $statement = $dbconn->prepare( $query2 );
                 $statement ->execute();
                 $result2 = $statement->fetchAll();
-                foreach ( $result2 as $fetch_user_pic ) {
+                foreach ( $result2 as $loop_key => $fetch_user_pic ) {
 
                      $image = $fetch_user_pic ['image'];
                      
@@ -253,7 +253,7 @@ include('functions.php');
                                     m -->
                     <!-- this is one of the form causing the issue with this form send comment to user who
                                     post i want the page note to reload when submit button is clicked -->
-                    <form method="post" action="" data-comment-form-id="<?php echo $loop_key; ?>">
+                    <form method="post" action="add_comment.php" data-comment-form-id="<?php echo $loop_key; ?>">
                         <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                         <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
 

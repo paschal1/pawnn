@@ -17,10 +17,15 @@ include('functions.php');
 		$query1 = "INSERT INTO user_post_comment (user_id,post_id,comment) VALUES ('$user_id','$post_id','$txt')";
 		$statement = $dbconn->prepare($query1);
 		$statement ->execute();
+			if($statement){
+				header("location:index_once.php");
+				echo 'nice job';
+			}else{
+				echo'bad job';
+			}
+
 		}
 		
-		if($statement){
-			header('Location: post_index.php');
-		}
+		
 	// }
 ?>
