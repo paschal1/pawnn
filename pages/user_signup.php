@@ -21,61 +21,16 @@
     <!-- CSS Files -->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../assets/css/now-ui-kit.css?v=1.1.0" rel="stylesheet" />
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="../assets/css/demo.css" rel="stylesheet" />
+
     <style>
-    .content {
+    .content-vent {
         padding-top: 100px;
     }
     </style>
 </head>
 
 <body class="login-page sidebar-collapse">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
-        <div class="container">
-            <div class="navbar-translate">
-                <a href="../index.php" class="navbar-brand" rel="tooltip"
-                    title="Designed and Coded by Serve(5) Start Technology, Inc." data-placement="bottom">
-                    E-PS pawn.ng
-                </a>
-                <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navigation" aria-controls="navigation-index" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-bar bar1"></span>
-                    <span class="navbar-toggler-bar bar2"></span>
-                    <span class="navbar-toggler-bar bar3"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navigation"
-                data-nav-image="../assets/img/blurred-image-1.jpg">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom"
-                            href="https://twitter.com/CreativeTim" target="_blank">
-                            <i class="fa fa-twitter"></i>
-                            <p class="d-lg-none d-xl-none">Twitter</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom"
-                            href="https://www.facebook.com/CreativeTim" target="_blank">
-                            <i class="fa fa-facebook-square"></i>
-                            <p class="d-lg-none d-xl-none">Facebook</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom"
-                            href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
-                            <i class="fa fa-instagram"></i>
-                            <p class="d-lg-none d-xl-none">Instagram</p>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- End Navbar -->
+
 
     <?php
 // including the database connection file
@@ -209,287 +164,173 @@ if(isset($_POST['submit'])){
 
 ?>
 
-    <div class="page-header" filter-color="orange">
+    <div class="page-header" filter-color="orange" style="padding:15px;">
         <div class="page-header-image" style="background-image:url(../assets/img/bg4.jpg)"></div>
-        <div class="container">
-            <div class="col-md-4 content-center">
-                <div class="card card-login card-plain">
-                    <form id="contact-form" method="post" action="user_signup.php" role="form">
-                        <div class="header header-primary text-center">
-                            <div class="logo-container">
 
-                                <img src="../pschat/epsimage/icon.png" alt="Eps logo">
-                                <!--insert logo here-->
-                            </div>
-                        </div>
-                        <!--    <div class="content">
-                            <div class="input-group form-group-no-border input-lg">
-                                <span class="input-group-addon">
-                                    <i class="now-ui-icons users_circle-08"></i>
-                                </span>
-                                <input type="text" name="firstname" class="form-control" placeholder="First name"
-                                    required>
-                            </div>
-                            <div class="input-group form-group-no-border input-lg">
-                                <span class="input-group-addon">
-                                    <i class="now-ui-icons users_circle-08"></i>
-                                </span>
-                                <input type="text" name="middlename" class="form-control" placeholder="Middle name"
-                                    required>
-                            </div>
-                            <div class="input-group form-group-no-border input-lg">
-                                <span class="input-group-addon">
-                                    <i class="now-ui-icons users_circle-08"></i>
-                                </span>
-                                <input type="text" name="lastname" class="form-control" placeholder="Last name"
-                                    required>
-                            </div>
-                            <div class="input-group form-group-no-border input-lg">
-                                <span class="input-group-addon">
-                                    <i class="now-ui-icons business_bank"></i>
-                                </span>
-                                <input type="text" name="address" class="form-control" placeholder="Complete address"
-                                    required>
-                            </div>
-                            <div class="input-group form-group-no-border input-lg">
-                                <span class="input-group-addon">
-                                    <i class="now-ui-icons ui-1_email-85"></i>
-                                </span>
-                                <input type="text" name="email" class="form-control" placeholder="Email" required>
-                            </div>
-                            <div class="input-group form-group-no-border input-lg">
-                                <span class="input-group-addon">
-                                    <i class="now-ui-icons tech_mobile"></i>
-                                </span>
-                                <input type="text" name="contact" class="form-control" placeholder="Contact info"
-                                    required>
-                            </div>
-                            <input type="hidden" name="status" value="Offline">
-                            <div class="input-group form-group-no-border input-lg">
-                                <span class="input-group-addon">
-                                    <i class="now-ui-icons users_single-02"></i>
-                                </span>
-                                <input type="text" id="username" name="username" class="form-control"
-                                    placeholder="Username" required>
-                            </div>
-                            <div class="input-group form-group-no-border input-lg">
-                                <span class="input-group-addon">
-                                    <i class="now-ui-icons tech_mobile"></i>
-                                </span>
-                                <input type="text" name="phone" class="form-control"
-                                    placeholder="Phone eg. +2348130062780" required>
-                            </div>
-                            <div class="input-group form-group-no-border input-lg">
-                                <span class="input-group-addon">
-                                    <i class="now-ui-icons ui-1_lock-circle-open"></i>
-                                </span>
-                                <input type="password" id="password" name="password" placeholder="Password"
-                                    class="form-control" required>
-                            </div>
+        <div class="col-md-4 content-center">
+            <div class="card  card-plain">
 
-                            <div class="input-group form-group-no-border input-lg"> -->
-                        <!-- <span class="form-control">
-                                    <i value="Gender"></i> -->
-                        <!-- </span> -->
-                        <!-- <select class="form-contro" name="gender"
-                                    style="width:120;height:35;font-size:18px;padding:3; color:black;" required>
-                                    <option value="Select Gender:"> Select Gender: </option>
-                                    <option value="Female"> Female </option>
-                                    <option value="Male"> Male </option>
-                                    <option value="Custom"> Custom </option>
-                                </select>
-                            </div>
+                <div class="container h-100 ">
+                    <div class=" row h-100 justify-content-center align-items-center">
+                        <form id="contact-form" method="post" action="user_signup.php" role="form">
 
-                            <div class="input-group form-group-no-border input-lg">
-                                <span class="input-group-addon">
-                                    <i class=""></i>
-                                </span>
-                                <input type="date" id="birthday_date" name="birthday_date" placeholder=""
-                                    class="form-control" required>
-                            </div> -->
+
+                            <div class="controls">
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_name">Firstname *</label>
+                                            <input id="form_name" type="text" name="firstname" class="form-control"
+                                                placeholder="Please enter your firstname *" required="required"
+                                                data-error="Firstname is required.">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_lastname">Lastname *</label>
+                                            <input id="form_lastname" type="text" name="lastname" class="form-control"
+                                                placeholder="Please enter your lastname *" required="required"
+                                                data-error="Lastname is required.">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_name">Middle name *</label>
+                                            <input id="form_name" type="text" name="middlename" class="form-control"
+                                                placeholder="Please enter your Middle name *" required="required"
+                                                data-error="Firstname is required.">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_lastname">Address *</label>
+                                            <input id="form_lastname" type="text" name="address" class="form-control"
+                                                placeholder="Please enter your Address *" required="required"
+                                                data-error="Lastname is required.">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_email">Email *</label>
+                                            <input id="form_email" type="email" name="email" class="form-control"
+                                                placeholder="Please enter your email *" required="required"
+                                                data-error="Valid email is required.">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="status" value="Offline">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_phone">Contact</label>
+                                            <input id="form_phone" type="tel" name="contact" class="form-control"
+                                                placeholder="Please enter your Contact Info">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
 
 
 
-                        <div class="messages"></div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_email">Phone *</label>
+                                            <input id="form_email" type="tel" name="phone" class="form-control"
+                                                placeholder="Phone eg. +2348130062780 *" required="required"
+                                                data-error="Valid Phone number is required.">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_phone">Password</label>
+                                            <input id="form_phone" type="password" name="password" class="form-control"
+                                                placeholder="Please enter your password">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                        <div class="controls">
+                                <span style="color:gray;">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="form_email">DOB *</label>
+                                                <input id="form_email" type="date" name="birthday_date"
+                                                    class="form-control" placeholder="Please enter your DOB *"
+                                                    required="required" data-error="Valid DOB is required.">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
 
+
+                                        <div class="col-md-6" bg="black">
+                                            <div class="form-group">
+                                                <label for="form_need">Gender *</label>
+                                                <select id="form_need" name="gender" class="form-control"
+                                                    required="required" data-error="Please specify your need.">
+
+                                                    <option value="Select Gender:"> Select Gender: </option>
+                                                    <option value="Female"> Female </option>
+                                                    <option value="Male"> Male </option>
+                                                    <option value="Custom"> Custom </option>
+                                                    <option value="Other">Other</option>
+                                                </select>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="form_phone">Username</label>
+                                            <input id="form_phone" type="text" name="username" class="form-control"
+                                                placeholder="Please enter your Username">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </span>
+                                <div class="col-md-12">
+                                    <input type="submit" class="bbtn btn-primary btn-round btn-lg btn-block"
+                                        value="Create account" id="submit" name="submit">
+                                    <span class="glyphicon glyphicon-floppy-save"></span>
+                                </div>
+                            </div>
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_name">Firstname *</label>
-                                        <input id="form_name" type="text" name="firstname" class="form-control"
-                                            placeholder="Please enter your firstname *" required="required"
-                                            data-error="Firstname is required.">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_lastname">Lastname *</label>
-                                        <input id="form_lastname" type="text" name="lastname" class="form-control"
-                                            placeholder="Please enter your lastname *" required="required"
-                                            data-error="Lastname is required.">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
+                                <div class="col-md-12">
+                                    <p class="text-muted"><strong>*</strong> These fields are required.
+                                    </p>
                                 </div>
                             </div>
+                    </div>
 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_name">Middle name *</label>
-                                        <input id="form_name" type="text" name="middlename" class="form-control"
-                                            placeholder="Please enter your Middle name *" required="required"
-                                            data-error="Firstname is required.">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_lastname">Address *</label>
-                                        <input id="form_lastname" type="text" name="address" class="form-control"
-                                            placeholder="Please enter your Address *" required="required"
-                                            data-error="Lastname is required.">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_email">Email *</label>
-                                        <input id="form_email" type="email" name="email" class="form-control"
-                                            placeholder="Please enter your email *" required="required"
-                                            data-error="Valid email is required.">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <input type="hidden" name="status" value="Offline">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_phone">Contact</label>
-                                        <input id="form_phone" type="tel" name="contact" class="form-control"
-                                            placeholder="Please enter your Contact Info">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                            </div>
+                    </form>
 
 
 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_email">Phone *</label>
-                                        <input id="form_email" type="tel" name="phone" class="form-control"
-                                            placeholder="Phone eg. +2348130062780 *" required="required"
-                                            data-error="Valid Phone number is required.">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_phone">Password</label>
-                                        <input id="form_phone" type="password" name="password" class="form-control"
-                                            placeholder="Please enter your password">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_email">DOB *</label>
-                                        <input id="form_email" type="date" name="birthday_date" class="form-control"
-                                            placeholder="Please enter your DOB *" required="required"
-                                            data-error="Valid DOB is required.">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-md-6" bg="black">
-                                    <div class="form-group">
-                                        <label for="form_need">Gender *</label>
-                                        <select id="form_need" name="gender" class="form-control" required="required"
-                                            data-error="Please specify your need.">
-
-                                            <option value="Select Gender:"> Select Gender: </option>
-                                            <option value="Female"> Female </option>
-                                            <option value="Male"> Male </option>
-                                            <option value="Custom"> Custom </option>
-                                            <option value="Other">Other</option>
-                                        </select>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="form_phone">Username</label>
-                                    <input id="form_phone" type="text" name="username" class="form-control"
-                                        placeholder="Please enter your Username">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-12">
-                                <input type="submit" class="bbtn btn-primary btn-round btn-lg btn-block"
-                                    value="Create account" id="submit" name="submit">
-                                <span class="glyphicon glyphicon-floppy-save"></span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p class="text-muted"><strong>*</strong> These fields are required.
-                                </p>
-                            </div>
-                        </div>
                 </div>
-
-                </form>
-
-            </div>
-            <!-- <div class="footer text-center">
-                    <button type="submit" class="bbtn btn-primary btn-round btn-lg btn-block" id="submit" name="submit">
-                        Create account
-                        <span class="glyphicon glyphicon-floppy-save"></span>
-                    </button>
-                </div> -->
-
-        </div>
-    </div>
-    </div>
-
-
-
-    <footer class="footer">
-        <div class="container">
-            <div class="copyright">
-                &copy;
-                <script>
-                document.write(new Date().getFullYear())
-                </script>, Designed and Coded by Serve(5) Starite Technology, Inc.
             </div>
         </div>
-    </footer>
+
+
     </div>
+    </div>
+
+    </div>
+
 </body>
-<!--   Core JS Files   -->
-<script src="../assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
-<script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
-<script src="../assets/js/core/bootstrap.min.js" type="text/javascript"></script>
-<!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
-<script src="../assets/js/plugins/bootstrap-switch.js"></script>
-<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-<script src="../assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
-<!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
-<script src="../assets/js/plugins/bootstrap-datepicker.js" type="text/javascript"></script>
-<!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
-<script src="../assets/js/now-ui-kit.js?v=1.1.0" type="text/javascript"></script>
+
 
 </html>
