@@ -142,7 +142,7 @@ include('functions.php');
 
                      $image = $fetch_user_pic ['image'];
                      
-        $query1="SELECT * FROM users WHERE $userid = user_id"; 
+        $query1="SELECT * FROM users WHERE $userid = user_id";
         // $query1="SELECT users.firstname, users.middlename, users.lastname, user_profile_pic.image FROM users, user_profile_pic WHERE $userid = users.user_id=user_profile_pic.user_id ORDER BY user_profile_pic.timeCreated"; 
         $statement = $dbconn->prepare($query1);
         $statement->execute();
@@ -173,7 +173,8 @@ include('functions.php');
                 <div class="card-body text-success">
                     <?php if ($fetch_user_pic['image'] != "") : ?> <span>
                         <img src="../uploads/profile/<?php echo $image; ?> " height="40px" width="40px"
-                            class="img-circle" /> </span>
+                            class="img-circle" />
+                    </span>
                     <?php else : ?>
                     <img src="img/user.jpeg" height="40px" width="100%" class="img-circle" id="profileDisplay"
                         onclick="triggerClick()" />
@@ -253,15 +254,16 @@ include('functions.php');
                                     m -->
                     <!-- this is one of the form causing the issue with this form send comment to user who
                                     post i want the page note to reload when submit button is clicked -->
-                    <form method="post" action="add_comment.php" data-comment-form-id="<?php echo $loop_key; ?>">
-                        <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+                    <form method="post" action="add_comment.php" class="form-group"
+                        data-comment-form-id="<?php echo $loop_key; ?>">
+                        <input type="hidden" name="user_id" value="<?php echo $userid; ?>">
                         <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
-
-                        <textarea type="text" style="border:none;" placeholder="comment here..." name="comment_txt"
-                            id="comment" row="2" col="3" value=""></textarea>
-                        <input type="submit" class="btn default submit" value="Send" title="submit" name="subcomment"
-                            src="img/sendtext.PNG" alt="Send" width=30px height=22px />
-                        <i class="bi bi-cursor"></i>
+                        <div class="form-group">
+                            <textarea class="form-input" type="text" style="border:none;" placeholder="comment here..."
+                                name="comment_txt" id="comment" row="2" col="3" value=""></textarea>
+                            <input type="submit" class="btn default submit" value="Send" title="submit" name="comment"
+                                src="img/sendtext.PNG" alt="Send" width=30px height=22px />
+                            <i class="bi bi-cursor"></i>
                     </form>
                     <?php
                                                 $query = "SELECT * FROM user_post_comment WHERE post_id=$post_id ORDER BY comment_id";
@@ -294,13 +296,14 @@ include('functions.php');
                                 ?>
                 <tr>
                     <td> </td>
-                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2"><img
-                            src="../uploads/profile/<?php echo $user_pic; ?> " height="20px" width="20px"
+                    <td bgcolor="#EDEFF4" style="padding-left:7;" colspan="2">
+                        <img src="../uploads/profile/<?php echo $image; ?> " height="20px" width="20px"
                             border-radius="50px" />
                         <?php echo '<b>' . $user_name . '</b>'; ?>
                         <?php echo '<b>' . $user_name2 . '</b>'; ?>
                         <?php echo '<b>' . $user_name3 . '</b>'; ?>
-                        <?php echo $cline1; ?></td>
+                        <?php echo $cline1; ?>
+                    </td>
                 </tr>
                 <?php
                                                 } else if ($clen > 60 && $clen <= 120) {
@@ -558,7 +561,7 @@ include('functions.php');
 
 
     </section>
-    <script src='Profile_js/pagination.js'></script>
+    <script src="Profile_js/pagination.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
