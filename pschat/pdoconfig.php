@@ -1,7 +1,7 @@
 <?php
 $host = 'localhost';
-$dbname = 'epspttyh_pawn';
-$username = 'epspttyh_starite';
+$dbname = 'epsphzof_pawn';
+$username = 'epsphzof_starite';
 $password = 'paschal@081';
 
 // $host = 'localhost';
