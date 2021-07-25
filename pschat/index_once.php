@@ -121,8 +121,8 @@ include('functions.php');
 
         <?php
 
-     $query = "SELECT * FROM user_post WHERE priority ='public' ORDER BY post_id DESC LIMIT 40";
-        $statement = $dbconn->prepare($query);
+            $query = "SELECT * FROM user_post WHERE priority ='public' ORDER BY post_id DESC LIMIT 40";
+            $statement = $dbconn->prepare($query);
             $statement->execute();
             $result = $statement->fetchAll();
             $count = $dbconn->query('SELECT * FROM user_post');

@@ -1,23 +1,23 @@
 
 
-//  $("#formdata").on('submit',function(e){
+ $("#formdata").on('submit',function(e){
 
 
-//     var form_data = $(this).serialize();
-//     $.ajax({
-//         type:"POST",
-//         url:"upload.php",
-//         data:form_data,
-//         success:function(){
+    var form_data = $(this).serialize();
+    $.ajax({
+        type:"POST",
+        url:"upload.php",
+        data:form_data,
+        success:function(){
             
-//             $('#formdata')[0].reset();
-//             alert('post sent');
+            $('#formdata')[0].reset();
+            alert('post sent');
             
-//         }
+        }
     
-//     })
-//     e.preventDefault();
-//     }); 
+    })
+    e.preventDefault();
+    }); 
 
  //script for pagination or infinite scrolling
     $(document).ready(function() {
@@ -61,25 +61,25 @@
     });
     
     //  Here is where i wrote the javascript to prevent page reload for comment form
-$(document).ready(function() {
+// $(document).ready(function() {
 
-    $('form[data-comment-form-id]').each(function() {
-        $(this).submit((e) => {
-            e.preventDefault();
-            var form_data = $(this).serialize();
-            $.ajax({
-                type: "POST",
-                url: "add_comment.php",
-                data: form_data,
-                success: function() {
-                    $(this).reset();
-                    alert('comment sent');
-                }
+//     $('form[data-comment-form-id]').each(function() {
+//         $(this).submit((e) => {
+//             e.preventDefault();
+//             var form_data = $(this).serialize();
+//             $.ajax({
+//                 type: "POST",
+//                 url: "add_comment.php",
+//                 data: form_data,
+//                 success: function() {
+//                     $(this).reset();
+//                     alert('comment sent');
+//                 }
 
-            })
+//             })
 
-        });
-    });
+//         });
+//     });
 
     // Here is where i wrote the javascript to prevent page reload for sendMessage button  
     $('form[data-sendmessage-form-id]').each(function() {
