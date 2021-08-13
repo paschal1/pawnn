@@ -2,10 +2,10 @@
 session_start();
 
 
-if (!isset($_SESSION['id']) || (trim($_SESSION['id']) == '')) {
-    header('location:../pages/user_login_page.php');
-    exit();
-}
+// if (!isset($_SESSION['id']) || (trim($_SESSION['id']) == '')) {
+//     header('location:../pages/user_login_page.php');
+//     exit();
+// }
 //db connection goes here -->
 include('database_connect.php');
 //include functions here.. 
@@ -201,7 +201,7 @@ include('functions.php');
                                     <p class="card-text"><?php echo $rows[2]; ?></p>
                                     <p class="card-text"><small
                                             class="text-muted"><?php echo $rows[4] . ' Item in Stock'; ?></small>
-                                        <span>&#8358;<?php echo $rows[3]; $from_user_id = $_SESSION['id'];?>
+                                        <span>&#8358;<?php echo $rows[3]; ?>
 
 
                                             <form method="post">
